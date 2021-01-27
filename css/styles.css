@@ -1,0 +1,23 @@
+/*rem es proporcional a la pantalla del dispositivo a usar , ya que al usar px en dispositivos con una densidad de pixeles muy alta
+las letras apenas serian visibles*/
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*es un pequeño hack para que la conversion de rem a px sea mucho mas facil y que se dapte mejor a todo tipo de pantallas*/
+html{
+    font-size: 65.5%;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px*/
+}
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+/*Esto busca los span dentro de la clase titulo y le asigna los estilos definidos*/
+.titulo span{
+    font-size: 2rem; /*tamaño de la letra de la etiqueta span*/
+}
