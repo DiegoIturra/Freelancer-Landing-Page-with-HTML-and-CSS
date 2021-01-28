@@ -15,6 +15,15 @@ para luego usarlas durante el codigo*/
 /*es un pequeño hack para que la conversion de rem a px sea mucho mas facil y que se dapte mejor a todo tipo de pantallas*/
 html{
     font-size: 65.5%;
+
+    /*sirve para evitar problemas en los padding cuando cambian el tamaño
+    de los elementos*/
+    box-sizing: border-box;
+}
+
+/*Sirve para evitar que los padding afecten el tamaño de un elemento*/
+* , *:before , *:after{
+    box-sizing: inherit;
 }
 
 body{
@@ -23,11 +32,23 @@ body{
 }
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
-.titulo{
-    text-align: center;
+/*Valores genericos para los h1,h2,h3*/
+h1{
     font-size: 3.8rem;
-    font-family: 'Krub', sans-serif;
 }
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
 
 /*Esto busca los span dentro de la clase titulo y le asigna los estilos definidos*/
 .titulo span{
@@ -75,4 +96,54 @@ body{
         flex-direction: row;
         justify-content: space-between; /*es necesario solo en version pc*/
     }
+}
+
+/************* Seccion titulo principal e imagen *****************/
+.hero{
+    /*al usar un section la imagen se adapta al tamaño del contenedor*/
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat; /*No se repite la imagen*/
+    background-size: cover; /*Establece el tamaño de la imagen*/
+    height: 45rem;
+
+    /*Se agrega pos relativa al padre para luego poder asignarle
+    una posicion absoluta al contenido hijo , el cual corresponde
+    al div con la imagen*/
+    position: relative;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+
+    /*El div usa todo el espacio disponible por el contenedor padre*/
+    width: 100%;
+    height: 100%;
+
+
+    /*estas 4 instrucciones se pueden usar siempre para alinear elementos
+    de forma vertical y horizontalemnte en el centro*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*modifica tanto el h2 y p dentro de la clase contenido-hero*/
+.contenido-hero h2 , .contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero a{
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: var(--secundario) solid;
+    text-transform: uppercase;
+}
+
+.contenido-hero a:hover{
+    font-weight: bolder;
+    background-color: var(--secundario);
 }
