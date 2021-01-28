@@ -5,8 +5,14 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Diseñador Freelancer</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <!--Cargar la libreria normalize-->
+    <link rel="stylesheet" href="css/normalize.css">
 
-    <!--Preloado ayuda a que los estilos carguen de manera mas rapida-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet"> 
+
+    <!--Preload ayuda a que los estilos carguen de manera mas rapida-->
     <link rel="preload" href="css/styles.css" as="style">
 
     <!--linkear codigo HTML a CSS-->
@@ -21,15 +27,22 @@
         <h1 class="titulo">Diego Iturra <span>Freelancer</span></h1>
     </header>
 
-    <nav>
-        <a href="">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="">Clientes</a>
-        <a href="">Contacto</a>
-    </nav>
+
+    <!--Se usa un div conteniendo el nav porque permite que el div se extienda
+    en todo el ancho de la pantalla , pero el contenido (nav) el cual tiene la clase contenedor
+    se centre-->
+    <div class="nav-bg">
+        <!--Se pueden agregar una o varias clases a los elementos-->
+        <nav class="navegacion-principal contenedor">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
 
     <section>
-        <h2>Diseño y Desarrollo Web Freelancer</h2>
+        <h2 class="titulo">Diseño y Desarrollo Web Freelancer</h2>
 
         <!--icono pin mapa-->
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffc107" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -42,7 +55,6 @@
         <a href="">Contactar</a>
     </section>
     
-
     <!--Seccion Principal-->
     <main>
         <h2>Mis Servicios</h2>

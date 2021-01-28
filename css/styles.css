@@ -1,6 +1,16 @@
 /*rem es proporcional a la pantalla del dispositivo a usar , ya que al usar px en dispositivos con una densidad de pixeles muy alta
 las letras apenas serian visibles*/
 
+/*crea propiedades de CSS de manera personalizada (custom properties)
+para luego usarlas durante el codigo*/
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------*/
 /*es un pequeño hack para que la conversion de rem a px sea mucho mas facil y que se dapte mejor a todo tipo de pantallas*/
 html{
@@ -9,15 +19,60 @@ html{
 
 body{
     font-size: 16px; /* 1rem = 10px*/
+    font-family: 'Krub', sans-serif; /*Se aplica a todos los textos*/
 }
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
 .titulo{
     text-align: center;
     font-size: 3.8rem;
+    font-family: 'Krub', sans-serif;
 }
 
 /*Esto busca los span dentro de la clase titulo y le asigna los estilos definidos*/
 .titulo span{
     font-size: 2rem; /*tamaño de la letra de la etiqueta span*/
+}
+
+/*Clase estandar para poder centrar los elementos en la pagina*/
+.contenedor{
+    max-width: 120rem; /*Como maximo toma este tamaño*/
+    margin: 0 auto 0 auto; /*Arriba->derecha->abajo->izquierda (sentido horario)*/
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+/*Clase del nav principal*/
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Decora los enlaces dentro de la clase navegacion-principal*/
+.navegacion-principal a{
+    display: block;
+    color: var(--blanco);
+    text-decoration: none;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; /*padding a los 4 lados*/
+}
+
+
+/*Cuando se pasa el cursor sobre el enlace cambia de color*/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/************ Responsive Design para pc **********************/
+@media (min-width: 768px){
+
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between; /*es necesario solo en version pc*/
+    }
 }
