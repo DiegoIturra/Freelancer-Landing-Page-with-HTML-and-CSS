@@ -37,7 +37,7 @@
             <a href="#">Inicio</a>
             <a href="#">Nosotros</a>
             <a href="#">Clientes</a>
-            <a href="#">Contacto</a>
+            <a href="#contact">Contacto</a>
         </nav>
     </div>
 
@@ -130,50 +130,51 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda illum voluptate quod</p>
             </section>
         </div>
+
+        <!--Seccion Contacto-->
+        <section id="contact">
+            <h2>Contacto</h2>
+
+            <!--Formulario-->
+            <form class="formulario">
+                <fieldset>
+                    <!--Titulo del formulario-->
+                    <legend>Contactános llenando todos los campos</legend>
+
+                    <!--Los div permiten que se estructure de arriba hacia abajo en vez de hacia la derecha-->
+                    <div>
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" placeholder="Nombre">
+                        </div>
+
+                        <div class="campo">
+                            <label>Telefóno</label>
+                            <input class="input-text" type="tel" placeholder="Telefono">
+                        </div>
+
+                        <div class="campo">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" placeholder="Mail">
+                        </div>
+
+                        <div class="campo">
+                            <label>Mensaje</label>
+                            <textarea class="input-text-area" placeholder="Escribe un mensaje"></textarea>
+                        </div>
+                    </div>
+
+                    <!--boton de enviar formulario-->
+                    <div class="contenedor-boton-submit">
+                        <input class="boton-submit" type="submit" value="Enviar">
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
     </main>
-
-    <!--Seccion Contacto-->
-    <section id="contact">
-        <h2>Contacto</h2>
-
-        <!--Formulario-->
-        <form action="">
-            <fieldset>
-                <!--Titulo del formulario-->
-                <legend>Contactános llenando todos los campos</legend>
-
-                <!--Los div permiten que se estructure de arriba hacia abajo en vez de hacia la derecha-->
-
-                <div>
-                    <label>Nombre</label>
-                    <input type="text" placeholder="Nombre">
-                </div>
-
-                <div>
-                    <label>Telefóno</label>
-                    <input type="tel" placeholder="Telefono">
-                </div>
-
-                <div>
-                    <label>Correo</label>
-                    <input type="email" placeholder="Mail">
-                </div>
-
-                <div>
-                    <label>Mensaje</label>
-                    <textarea></textarea>
-                </div>
-
-                <!--boton de enviar formulario-->
-                <div>
-                    <input type="submit" value="Enviar">
-                </div>
-
-            </fieldset>
-        </form>
-    </section>
     
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados</p>
     </footer>
 
