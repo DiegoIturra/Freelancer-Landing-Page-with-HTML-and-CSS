@@ -9,6 +9,7 @@ para luego usarlas durante el codigo*/
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisclaro: #dfe9f3;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -29,6 +30,9 @@ html{
 body{
     font-size: 16px; /* 1rem = 10px*/
     font-family: 'Krub', sans-serif; /*Se aplica a todos los textos*/
+    
+    /*Degradado de fondo*/
+    background-image: linear-gradient(to top , var(--grisclaro) 0%,var(--blanco) 100%);
 }
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
@@ -60,6 +64,17 @@ h1,h2,h3{
     max-width: 120rem; /*Como maximo toma este tamaño*/
     margin: 0 auto 0 auto; /*Arriba->derecha->abajo->izquierda (sentido horario)*/
 }
+
+/*Clase para la sombra del main content*/
+.sombra{
+    -webkit-box-shadow: 0px 6px 15px 1px rgba(138,138,138,1);
+    -moz-box-shadow: 0px 6px 15px 1px rgba(138,138,138,1);
+    box-shadow: 0px 6px 15px 1px rgba(138,138,138,1);
+    background-color: var(--blanco); /*para diferneciar del body*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 
 .nav-bg{
     background-color: var(--secundario);
@@ -110,6 +125,7 @@ h1,h2,h3{
     una posicion absoluta al contenido hijo , el cual corresponde
     al div con la imagen*/
     position: relative;
+    margin: 2rem;
 }
 
 .contenido-hero{
@@ -146,4 +162,47 @@ h1,h2,h3{
 .contenido-hero a:hover{
     font-weight: bolder;
     background-color: var(--secundario);
+}
+
+/*************************** CSS Grid **********************/
+/* Usamos css grid para la seccion de servicios */
+@media (min-width: 768px){
+    .servicios{
+        display: grid;
+    
+        /*3 columnas, 1 para cada seccion*/
+        /*cada grilla usa una fraccion equivalente para cada una*/
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+    }
+        
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: var(--secundario) dashed;
+    border-radius: 2rem;
+    margin: .5rem;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /*Alinea de forma vertical*/
 }
